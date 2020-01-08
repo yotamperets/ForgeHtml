@@ -1,0 +1,416 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i|Playfair+Display:400,400i,700,700i,900,900i&display=swap");
+body, html {
+  font-family: 'Montserrat';
+  color: white;
+  margin: 0;
+  font-size: 2.8vh;
+  background-color: black;
+  position: relative;
+  min-height: 100vh;
+}
+
+body a, html a {
+  text-decoration: none;
+}
+
+body .bg-img, html .bg-img {
+  position: absolute;
+  z-index: 0;
+  height: 150vh;
+  mix-blend-mode: hard-light;
+  left: -150px;
+  top: -225px;
+}
+
+body element, html element {
+  position: absolute;
+  background: black;
+  color: white;
+  padding: 2em;
+  width: calc(100% - 4em);
+  height: calc(100vh - 4em);
+  display: none;
+  -webkit-transform: scaleY(0);
+          transform: scaleY(0);
+  -webkit-transform-origin: bottom;
+          transform-origin: bottom;
+  z-index: 2;
+}
+
+body element h2, html element h2 {
+  padding-left: 8vh;
+  padding-top: 0vh;
+  font-weight: 700;
+  font-size: 7.2vh;
+  line-height: calc(7.2vh);
+}
+
+body element .author, html element .author {
+  padding-left: 8vh;
+  padding-top: 0vh;
+  font-weight: 200;
+  font-size: 3.6vh;
+  color: white;
+  line-height: 0;
+}
+
+body element .article-text, html element .article-text {
+  margin-left: 8vh;
+  padding-top: 0vh;
+  font-weight: 200;
+  font-size: 2.8vh;
+  color: white;
+  line-height: calc(3.4vh);
+  width: 90%;
+}
+
+body element object, html element object {
+  font-family: 'Montserrat';
+  color: white;
+  margin: 0;
+  font-size: 2.8vh;
+}
+
+header {
+  display: -webkit-box !important;
+  display: -ms-flexbox !important;
+  display: flex !important;
+  -webkit-box-pack: justify !important;
+      -ms-flex-pack: justify !important;
+          justify-content: space-between !important;
+  padding-right: 2em;
+  padding-left: 2em;
+  padding-top: 1em;
+  z-index: 3;
+}
+
+header .logo {
+  width: 7vh;
+  float: left;
+  font-weight: bold;
+  position: fixed;
+  z-index: 3;
+}
+
+header .moto {
+  text-decoration: none;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 60%;
+  text-align: center;
+  font-weight: 100;
+}
+
+header .menu-btn {
+  width: 5vh;
+  float: right;
+  cursor: pointer;
+}
+
+section h1 {
+  font-size: 28vh;
+  font-family: 'Playfair Display';
+  font-weight: 700;
+  line-height: calc(28*0.7vh);
+  width: 95%;
+  height: calc(35vh);
+  text-align: right;
+  position: fixed;
+  bottom: -5vh;
+}
+
+nav {
+  position: absolute;
+  background: white;
+  padding: 2em;
+  width: calc(100% - 4em);
+  height: calc(100vh - 4em);
+  display: none;
+  -webkit-transform: scaleX(0);
+          transform: scaleX(0);
+  -webkit-transform-origin: right;
+          transform-origin: right;
+  display: -ms-grid;
+  display: grid;
+}
+
+nav .close-btn {
+  width: 5vh;
+  float: right;
+  cursor: pointer;
+  opacity: 0;
+}
+
+nav ul {
+  list-style-type: none;
+  margin: 10% auto 0 auto;
+  -ms-grid-columns: 22vh 22vh;
+      grid-template-columns: 22vh 22vh;
+  -ms-grid-rows: 22vh 22vh;
+      grid-template-rows: 22vh 22vh;
+  grid-gap: 15px;
+  -ms-grid-column-align: center;
+      justify-self: center;
+  -webkit-padding-start: 0px;
+          padding-inline-start: 0px;
+}
+
+nav ul a {
+  color: white;
+  font-weight: bold;
+  font-size: 1em;
+  word-wrap: break-word;
+}
+
+nav ul span {
+  color: grey;
+  display: block;
+  font-size: .75em;
+  margin-top: 20px;
+}
+
+nav ul li {
+  opacity: 0;
+  background-color: black;
+  padding: 0.5em;
+  cursor: pointer;
+}
+
+.show-menu {
+  display: block;
+  -webkit-animation: slide-menu 1s ease-in forwards;
+          animation: slide-menu 1s ease-in forwards;
+}
+
+.show-menu .close-btn {
+  -webkit-animation: show-x 1s 1s forwards;
+          animation: show-x 1s 1s forwards;
+}
+
+.show-menu li:nth-of-type(1) {
+  -webkit-animation: menu-item-anim .6s forwards 1s ease-in-out;
+          animation: menu-item-anim .6s forwards 1s ease-in-out;
+}
+
+.show-menu li:nth-of-type(2) {
+  -webkit-animation: menu-item-anim .6s forwards 1.2s ease-in-out;
+          animation: menu-item-anim .6s forwards 1.2s ease-in-out;
+}
+
+.show-menu li:nth-of-type(3) {
+  -webkit-animation: menu-item-anim .6s forwards 1.4s ease-in-out;
+          animation: menu-item-anim .6s forwards 1.4s ease-in-out;
+}
+
+.show-menu li:nth-of-type(4) {
+  -webkit-animation: menu-item-anim .6s forwards 1.6s ease-in-out;
+          animation: menu-item-anim .6s forwards 1.6s ease-in-out;
+}
+
+.hide-menu {
+  display: block;
+  -webkit-animation: slide-back-menu 1s ease-in forwards;
+          animation: slide-back-menu 1s ease-in forwards;
+}
+
+.show-article {
+  display: block;
+  -webkit-animation: slide-article 1s ease-in forwards;
+          animation: slide-article 1s ease-in forwards;
+}
+
+.title-shrink {
+  display: block;
+  -webkit-animation: shrink-title 1s 1s forwards;
+          animation: shrink-title 1s 1s forwards;
+}
+
+.logo-color {
+  display: block;
+  -webkit-animation: switch-color 1s 1s forwards;
+          animation: switch-color 1s 1s forwards;
+}
+
+.ship-fade {
+  display: block;
+  -webkit-animation: fade-ship 1s 1s forwards;
+          animation: fade-ship 1s 1s forwards;
+}
+
+@-webkit-keyframes fade-ship {
+  from {
+    z-index: -1;
+  }
+  to {
+    z-index: -1;
+  }
+}
+
+@keyframes fade-ship {
+  from {
+    z-index: -1;
+  }
+  to {
+    z-index: -1;
+  }
+}
+
+@-webkit-keyframes switch-color {
+  from {
+    color: white;
+  }
+  to {
+    background: url("/Images/forge_black.svg");
+  }
+}
+
+@keyframes switch-color {
+  from {
+    color: white;
+  }
+  to {
+    background: url("/Images/forge_black.svg");
+  }
+}
+
+@-webkit-keyframes shrink-title {
+  from {
+    font-size: 28vh;
+    line-height: calc(28*0.7vh);
+    bottom: -5vh;
+    color: white;
+  }
+  to {
+    font-size: 7.2vh;
+    line-height: calc(7.2*0.7vh);
+    bottom: -40vh;
+    color: black;
+  }
+}
+
+@keyframes shrink-title {
+  from {
+    font-size: 28vh;
+    line-height: calc(28*0.7vh);
+    bottom: -5vh;
+    color: white;
+  }
+  to {
+    font-size: 7.2vh;
+    line-height: calc(7.2*0.7vh);
+    bottom: -40vh;
+    color: black;
+  }
+}
+
+@-webkit-keyframes slide-menu {
+  from {
+    -webkit-transform: scaleX(0);
+            transform: scaleX(0);
+  }
+  to {
+    -webkit-transform: scaleX(1);
+            transform: scaleX(1);
+  }
+}
+
+@keyframes slide-menu {
+  from {
+    -webkit-transform: scaleX(0);
+            transform: scaleX(0);
+  }
+  to {
+    -webkit-transform: scaleX(1);
+            transform: scaleX(1);
+  }
+}
+
+@-webkit-keyframes slide-back-menu {
+  from {
+    -webkit-transform: scaleX(1);
+            transform: scaleX(1);
+  }
+  to {
+    -webkit-transform: scaleX(0);
+            transform: scaleX(0);
+  }
+}
+
+@keyframes slide-back-menu {
+  from {
+    -webkit-transform: scaleX(1);
+            transform: scaleX(1);
+  }
+  to {
+    -webkit-transform: scaleX(0);
+            transform: scaleX(0);
+  }
+}
+
+@-webkit-keyframes slide-article {
+  from {
+    -webkit-transform: scaleY(0);
+            transform: scaleY(0);
+  }
+  to {
+    -webkit-transform: scaleY(1);
+            transform: scaleY(1);
+  }
+}
+
+@keyframes slide-article {
+  from {
+    -webkit-transform: scaleY(0);
+            transform: scaleY(0);
+  }
+  to {
+    -webkit-transform: scaleY(1);
+            transform: scaleY(1);
+  }
+}
+
+@-webkit-keyframes show-x {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes show-x {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes menu-item-anim {
+  from {
+    -webkit-transform: translateY(60%);
+            transform: translateY(60%);
+    opacity: 0;
+  }
+  to {
+    -webkit-transform: translateY(1);
+            transform: translateY(1);
+    opacity: 1;
+  }
+}
+
+@keyframes menu-item-anim {
+  from {
+    -webkit-transform: translateY(60%);
+            transform: translateY(60%);
+    opacity: 0;
+  }
+  to {
+    -webkit-transform: translateY(1);
+            transform: translateY(1);
+    opacity: 1;
+  }
+}
+/*# sourceMappingURL=main.css.map */

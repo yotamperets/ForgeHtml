@@ -1,0 +1,328 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i|Playfair+Display:400,400i,700,700i,900,900i&display=swap');
+
+
+//body and html
+body, html {
+    font-family: 'Montserrat';
+    color: white;
+    margin: 0;
+    font-size: 2.8vh;
+    background-color: black;
+    position: relative;
+    min-height: 100vh;
+
+    a {
+        text-decoration: none;
+    }    
+    
+    .bg-img {
+        position: absolute;
+        z-index: 0;
+        height: 150vh;
+        mix-blend-mode: hard-light;
+        left: -150px;
+        top: -225px;
+    }
+
+    //article
+    element{
+        position: absolute;
+        background: black;
+        color: white;
+        padding: 2em;
+        width: calc(100% - 4em);
+        height: calc(100vh - 4em);
+        display: none;
+        transform: scaleY(0);
+        transform-origin: bottom;
+        z-index: 2;
+     
+        h2 {
+            padding-left: 8vh;
+            padding-top: 0vh;
+            font-weight: 700;
+            font-size: 7.2vh;
+            line-height: calc(7.2vh);
+        }
+
+        .author {
+            padding-left: 8vh;
+            padding-top: 0vh;
+            font-weight: 200;
+            font-size: 3.6vh;
+            color: white;
+            line-height: 0;
+        }
+
+        .article-text {
+            //padding-left: 8vh;
+            margin-left: 8vh;
+            padding-top: 0vh;
+            font-weight: 200;
+            font-size: 2.8vh;
+            color: white;
+            line-height: calc(3.4vh);
+            width: 90%;
+        }
+
+        object{
+            font-family: 'Montserrat';
+            color: white;
+            margin: 0;
+            font-size: 2.8vh;
+        }
+    }
+
+  
+}
+
+//header
+header {
+    display: flex !important;
+    justify-content: space-between !important;
+    padding-right: 2em;
+    padding-left: 2em;
+    padding-top: 1em;
+    z-index: 3;
+
+    .logo {
+        width: 7vh;
+        float: left;
+        font-weight: bold;
+        position: fixed;
+        z-index: 3;
+    }
+
+    .moto {
+        text-decoration: none;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 60%;
+        text-align: center;
+        font-weight: 100;
+    }
+
+    .menu-btn {
+        width: 5vh;
+        float: right;
+        cursor: pointer;
+    }
+
+}
+
+//title on homepage
+section {
+
+    h1 {
+        font-size: 28vh;
+        font-family: 'Playfair Display';
+        font-weight: 700;
+        line-height: calc(28*0.7vh);
+        // margin: 1em auto;
+        width: 95%;
+        height: calc(35vh);
+        text-align: right;
+        position: fixed;
+        bottom: -5vh;
+        
+    }
+}
+
+
+//navigator
+nav {
+    position: absolute;
+    background: white;
+    padding: 2em;
+    width: calc(100% - 4em);
+    height: calc(100vh - 4em);
+    display: none;
+    transform: scaleX(0);
+    transform-origin: right;
+    display: grid;
+
+    .close-btn {
+        width: 5vh;
+        float: right;
+        cursor: pointer;
+        opacity: 0;
+    }
+
+    ul { 
+        list-style-type: none;
+        margin: 10% auto 0 auto;
+        grid-template-columns: 22vh 22vh ;
+        grid-template-rows: 22vh 22vh;
+        grid-gap: 15px;
+        justify-self: center;
+        padding-inline-start: 0px;
+        a {
+            color: white;
+            font-weight: bold;
+            font-size: 1em;
+            word-wrap: break-word;
+            // word-break: break-all;
+        }
+
+        span {
+            color: grey;
+            display: block;
+            font-size: .75em;
+            margin-top: 20px;
+            
+        }
+
+        li {
+            opacity: 0;
+            background-color: black;
+            padding: 0.5em;
+            cursor: pointer;
+        }
+    }
+}
+
+
+//JS
+
+
+.show-menu {
+    display: block;
+    animation: slide-menu 1s ease-in forwards;
+
+    .close-btn {
+        animation: show-x 1s 1s forwards;
+    }
+
+    li:nth-of-type(1){
+        animation: menu-item-anim .6s forwards 1s ease-in-out;
+    }
+
+    li:nth-of-type(2){
+        animation: menu-item-anim .6s forwards 1.2s ease-in-out;
+    }
+
+    li:nth-of-type(3){
+        animation: menu-item-anim .6s forwards 1.4s ease-in-out;
+    }
+
+    li:nth-of-type(4){
+        animation: menu-item-anim .6s forwards 1.6s ease-in-out;
+    }
+}
+
+.hide-menu {
+    display: block;
+    animation: slide-back-menu 1s ease-in forwards;
+}
+
+.show-article {
+    display: block;
+    animation: slide-article 1s ease-in forwards;
+}
+
+.title-shrink {
+    display: block;
+    animation: shrink-title 1s 1s forwards;
+}
+
+.logo-color {
+    display: block;
+    animation: switch-color 1s 1s forwards;
+}
+
+.ship-fade {
+    display: block;
+    animation: fade-ship 1s 1s forwards;
+}
+
+
+//animations
+
+@keyframes fade-ship {
+    from {
+        z-index: -1;
+    }
+
+    to {
+        z-index: -1;
+    }
+}
+
+//How to switch the image used for the icon?
+@keyframes switch-color {
+    from {
+        color: white;
+    }
+
+    to {
+        background:url('/Images/forge_black.svg');
+    }
+}
+
+@keyframes shrink-title{
+    from{
+        font-size: 28vh;
+        line-height: calc(28*0.7vh);
+        bottom: -5vh;
+        color: white;
+    }
+
+    to{
+        font-size: 7.2vh;
+        line-height: calc(7.2*0.7vh);
+        bottom: -40vh;
+        color: black;
+    }
+}
+
+@keyframes slide-menu {
+    from{
+        transform: scaleX(0);
+
+    }
+    to {
+        transform: scaleX(1);
+    }
+}
+
+@keyframes slide-back-menu {
+    from{
+        transform: scaleX(1);
+
+    }
+    to {
+        transform: scaleX(0);
+    }
+}
+
+@keyframes slide-article {
+    from{
+        transform: scaleY(0);
+
+    }
+    to {
+        transform: scaleY(1);
+    }
+}
+
+@keyframes show-x {
+    from{
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes menu-item-anim {
+    from {
+        transform: translateY(60%) ;
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(1) ;
+        opacity: 1;
+    }
+}

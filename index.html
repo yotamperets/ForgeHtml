@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/main.css">
+    <title>The Forge</title>
+</head>
+
+<body>
+
+    <!-- how to style the article text content? -->
+    <element class="article" id="article-overlay">
+        <!-- <object type="text/html" data="/Articles/article1.txt" border="0" > -->
+        <!-- </object> -->
+        <h2 class="article-title">AI, Recruitment & Discrimination</h2>
+        <p class="author">by Yotam Perets / Dec 12th, 2019</p>
+        <p class="article-text"> Lorem ipsum, dolor sit amet consectetur adipisicing elit. Expedita tenetur pariatur
+            nihil magnam rem culpa magni aliquam minima, a impedit odit odio quidem fugit doloremque eveniet. Rerum
+            accusantium iste tempora?</p>
+    </element>
+
+    <nav id="menu-overlay">
+        <img src="images/close.svg" class="close-btn" id="close-menu">
+        <ul>
+            <li id="a1">
+                <a href="#">AI, HR & Discrimination</a>
+                <span>by Yotam Perets</span>
+            </li>
+            <li id="a2">
+                <a href="#">IT & Car-Tuning</a>
+                <span>by Pauline Gehrke</span>
+            </li>
+            <li id="a3">
+                <a href="#">Amazon, Alexa & AI</a>
+                <span>By Hanna Wunderlich</span>
+            </li>
+            <li id="a4">
+                <a href="#">Robots & AI</a>
+                <span>by Natahlie</span>
+            </li>
+        </ul>
+    </nav>
+
+    <header>
+        <img src="images/forge_white.svg" class="logo" id="logo-icon">
+        <div class="moto">extraterrastrial experiments in technology</div>
+        <img src="images/menu.svg" class="menu-btn" id="open-menu">
+    </header>
+
+    <!-- How to fix image is blocking button click? -->
+    <!-- <img src="images/Spaceship.svg" class="bg-img" id="spaceship"> -->
+
+    <section>
+        <h1 id='title'>The<br>Forge</h1>
+    </section>
+
+    <!-- JS -->
+    <script>
+        var menuOverlay = document.getElementById('menu-overlay');
+        var articleOverlay = document.getElementById('article-overlay');
+        var title = document.getElementById('title');
+        var logo = document.getElementById('logo-icon');
+        var ship = document.getElementById('spaceship');
+
+        // clicking the menu button.
+        document.getElementById('open-menu').addEventListener('click', function () {
+            menuOverlay.classList.add('show-menu');
+            title.classList.add('title-shrink');
+            logo.classList.add('logo-color');
+            ship.classList.add('ship-fade')
+        });
+
+        // clicking the close menu button.
+        // How to close the menu with animation, 
+        // being able to open it a 2nd time?
+        document.getElementById('close-menu').addEventListener('click', function () {
+            // menuOverlay.classList.add('hide-menu');
+            menuOverlay.classList.remove('show-menu');
+            title.classList.remove('title-change');
+            logo.classList.remove('logo-color');
+            ship.classList.remove('ship-fade');
+        });
+
+        var articles = [
+            {
+                id: 1,
+                title: "AI, HR & Discrimination",
+                author: "Yotam Perets",
+                text: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Expedita tenetur pariatur"
+            },
+            {
+                id: 2,
+                title: "AI, HR & Discrimination",
+                author: "Hanna Wunderlich",
+                text: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Expedita tenetur pariatur"
+            }, {
+                id: 3,
+                title: "AI, HR & Discrimination",
+                author: "Pauline Gherke",
+                text: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Expedita tenetur pariatur"
+            }, {
+                id: 4,
+                title: "AI, HR & Discrimination",
+                author: "Nathalie Hubl",
+                text: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Expedita tenetur pariatur"
+            }
+        ]
+
+        articles.forEach((article) => {
+            document.getElementById(`a${article.id}`).addEventListener('click', function () {
+                articleOverlay.classList.add('show-article');
+                const { title, author, text } = article;
+                document.getElementsByClassName('article-title')[0].textContent = title;
+                document.getElementsByClassName('author')[0].textContent = author;
+                document.getElementsByClassName('article-text')[0].textContent = text;
+            })
+        })
+
+
+    </script>
+</body>
+
+</html>
