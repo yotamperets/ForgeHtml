@@ -1,6 +1,7 @@
 @import url("https://fonts.googleapis.com/css?family=Montserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i|Playfair+Display:400,400i,700,700i,900,900i&display=swap");
-body, html {
-  font-family: 'Montserrat';
+body,
+html {
+  font-family: "Montserrat";
   color: white;
   margin: 0;
   font-size: 2.8vh;
@@ -9,11 +10,13 @@ body, html {
   min-height: 100vh;
 }
 
-body a, html a {
+body a,
+html a {
   text-decoration: none;
 }
 
-body .bg-img, html .bg-img {
+body .bg-img,
+html .bg-img {
   position: absolute;
   z-index: 0;
   height: 150vh;
@@ -22,7 +25,8 @@ body .bg-img, html .bg-img {
   top: -225px;
 }
 
-body element, html element {
+body element,
+html element {
   position: absolute;
   background: black;
   color: white;
@@ -37,7 +41,8 @@ body element, html element {
   z-index: 2;
 }
 
-body element h2, html element h2 {
+body element h2,
+html element h2 {
   padding-left: 8vh;
   padding-top: 0vh;
   font-weight: 700;
@@ -45,8 +50,8 @@ body element h2, html element h2 {
   line-height: calc(7.2vh);
 }
 
-body element .author, html element .author {
-  padding-left: 8vh;
+body element .author,
+html element .author {
   padding-top: 0vh;
   font-weight: 200;
   font-size: 3.6vh;
@@ -54,7 +59,8 @@ body element .author, html element .author {
   line-height: 0;
 }
 
-body element .article-text, html element .article-text {
+body element .article-text,
+html element .article-text {
   margin-left: 8vh;
   padding-top: 0vh;
   font-weight: 200;
@@ -64,8 +70,14 @@ body element .article-text, html element .article-text {
   width: 90%;
 }
 
-body element object, html element object {
-  font-family: 'Montserrat';
+body element .article-p-title,
+html element .article-p-title {
+  font-weight: bold;
+}
+
+body element object,
+html element object {
+  font-family: "Montserrat";
   color: white;
   margin: 0;
   font-size: 2.8vh;
@@ -108,11 +120,18 @@ header .menu-btn {
   cursor: pointer;
 }
 
+header .close-article {
+  float: right;
+  cursor: pointer;
+  opacity: 0;
+  z-index: 3;
+}
+
 section h1 {
   font-size: 28vh;
-  font-family: 'Playfair Display';
+  font-family: "Playfair Display";
   font-weight: 700;
-  line-height: calc(28*0.7vh);
+  line-height: calc(28 * 0.7vh);
   width: 95%;
   height: calc(35vh);
   text-align: right;
@@ -161,7 +180,7 @@ nav ul a {
 nav ul span {
   color: grey;
   display: block;
-  font-size: .75em;
+  font-size: 0.75em;
   margin-top: 20px;
 }
 
@@ -169,6 +188,7 @@ nav ul li {
   opacity: 0;
   background-color: black;
   padding: 0.5em;
+  margin-bottom: 2px;
   cursor: pointer;
 }
 
@@ -184,28 +204,39 @@ nav ul li {
 }
 
 .show-menu li:nth-of-type(1) {
-  -webkit-animation: menu-item-anim .6s forwards 1s ease-in-out;
-          animation: menu-item-anim .6s forwards 1s ease-in-out;
+  -webkit-animation: menu-item-anim 0.6s forwards 1s ease-in-out;
+          animation: menu-item-anim 0.6s forwards 1s ease-in-out;
 }
 
 .show-menu li:nth-of-type(2) {
-  -webkit-animation: menu-item-anim .6s forwards 1.2s ease-in-out;
-          animation: menu-item-anim .6s forwards 1.2s ease-in-out;
+  -webkit-animation: menu-item-anim 0.6s forwards 1.2s ease-in-out;
+          animation: menu-item-anim 0.6s forwards 1.2s ease-in-out;
 }
 
 .show-menu li:nth-of-type(3) {
-  -webkit-animation: menu-item-anim .6s forwards 1.4s ease-in-out;
-          animation: menu-item-anim .6s forwards 1.4s ease-in-out;
+  -webkit-animation: menu-item-anim 0.6s forwards 1.4s ease-in-out;
+          animation: menu-item-anim 0.6s forwards 1.4s ease-in-out;
 }
 
 .show-menu li:nth-of-type(4) {
-  -webkit-animation: menu-item-anim .6s forwards 1.6s ease-in-out;
-          animation: menu-item-anim .6s forwards 1.6s ease-in-out;
+  -webkit-animation: menu-item-anim 0.6s forwards 1.6s ease-in-out;
+          animation: menu-item-anim 0.6s forwards 1.6s ease-in-out;
 }
 
 .show-menu li:nth-of-type(5) {
-  -webkit-animation: menu-item-anim .6s forwards 1.8s ease-in-out;
-          animation: menu-item-anim .6s forwards 1.8s ease-in-out;
+  -webkit-animation: menu-item-anim 0.6s forwards 1.8s ease-in-out;
+          animation: menu-item-anim 0.6s forwards 1.8s ease-in-out;
+}
+
+.show-back-btn {
+  display: block;
+  -webkit-animation: show-x 1s 1s forwards;
+          animation: show-x 1s 1s forwards;
+}
+
+.remove-back-btn {
+  -webkit-animation: remove-x 1s 1s forwards;
+          animation: remove-x 1s 1s forwards;
 }
 
 .hide-menu {
@@ -218,6 +249,11 @@ nav ul li {
   display: block;
   -webkit-animation: slide-article 1s ease-in forwards;
           animation: slide-article 1s ease-in forwards;
+}
+
+.remove-slide-article {
+  -webkit-animation: close-slide-article 1s ease-in forwards;
+          animation: close-slide-article 1s ease-in forwards;
 }
 
 .title-shrink {
@@ -277,13 +313,13 @@ nav ul li {
 @-webkit-keyframes shrink-title {
   from {
     font-size: 28vh;
-    line-height: calc(28*0.7vh);
+    line-height: calc(28 * 0.7vh);
     bottom: -5vh;
     color: white;
   }
   to {
     font-size: 7.2vh;
-    line-height: calc(7.2*0.7vh);
+    line-height: calc(7.2 * 0.7vh);
     bottom: -40vh;
     color: black;
   }
@@ -292,13 +328,13 @@ nav ul li {
 @keyframes shrink-title {
   from {
     font-size: 28vh;
-    line-height: calc(28*0.7vh);
+    line-height: calc(28 * 0.7vh);
     bottom: -5vh;
     color: white;
   }
   to {
     font-size: 7.2vh;
-    line-height: calc(7.2*0.7vh);
+    line-height: calc(7.2 * 0.7vh);
     bottom: -40vh;
     color: black;
   }
@@ -370,6 +406,28 @@ nav ul li {
   }
 }
 
+@-webkit-keyframes close-slide-article {
+  from {
+    -webkit-transform: scaleY(1);
+            transform: scaleY(1);
+  }
+  to {
+    -webkit-transform: scaleY(0);
+            transform: scaleY(0);
+  }
+}
+
+@keyframes close-slide-article {
+  from {
+    -webkit-transform: scaleY(1);
+            transform: scaleY(1);
+  }
+  to {
+    -webkit-transform: scaleY(0);
+            transform: scaleY(0);
+  }
+}
+
 @-webkit-keyframes show-x {
   from {
     opacity: 0;
@@ -385,6 +443,24 @@ nav ul li {
   }
   to {
     opacity: 1;
+  }
+}
+
+@-webkit-keyframes remove-x {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes remove-x {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
   }
 }
 

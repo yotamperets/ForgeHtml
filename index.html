@@ -1,156 +1,445 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="css/main.css">
-    <title>The Forge</title>
-</head>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <link rel="stylesheet" href="css/main.css">
+        <title>The Forge</title>
+    </head>
 
-<body>
+    <body>
 
-    <!-- how to style the article text content? -->
-    <element class="article" id="article-overlay">
-        <!-- <object type="text/html" data="/Articles/article1.txt" border="0" > -->
-        <!-- </object> -->
-        <!-- <h2 class="article-title">AI, Recruitment & Discrimination</h2>
+        <!-- how to style the article text content? -->
+        <element class="article" id="article-overlay">
+            <!-- <object type="text/html" data="/Articles/article1.txt" border="0" > -->
+            <!-- </object> -->
+            <!-- <h2 class="article-title">AI, Recruitment & Discrimination</h2>
         <p class="author">by Yotam Perets / Dec 12th, 2019</p>
         <p class="article-text"> Lorem ipsum, dolor sit amet consectetur adipisicing elit. Expedita tenetur pariatur
             nihil magnam rem culpa magni aliquam minima, a impedit odit odio quidem fugit doloremque eveniet. Rerum
             accusantium iste tempora?</p> -->
-    </element>
+        </element>
 
-    <nav id="menu-overlay">
-        <img src="images/close.svg" class="close-btn" id="close-menu">
-        <ul>
-            <li id="a1">
-                <a href="#">AI, HR & Discrimination</a>
-                <span>by Yotam Perets</span>
-            </li>
-            <li id="a2">
-                <a href="#">IT & Car-Tuning</a>
-                <span>by Pauline Gehrke</span>
-            </li>
-            <li id="a3">
-                <a href="#">Amazon, Alexa & AI</a>
-                <span>By Hanna Wunderlich</span>
-            </li>
-            <li id="a4">
-                <a href="#">Robots & AI</a>
-                <span>by Natahlie Hubl</span>
-            </li>
-            <li id="a5">
-                <a href="#">Sarah's article</a>
-                <span>by Sarah ???</span>
-            </li>
-        </ul>
-    </nav>
+        <nav id="menu-overlay">
+            <img src="images/close.svg" class="close-btn" id="close-menu">
+            <ul>
+                <li id="a1">
+                    <a href="#">AI, HR & Discrimination</a>
+                    <span>by Yotam Perets</span>
+                </li>
+                <li id="a2">
+                    <a href="#">Amazon, Alexa & AI</a>
+                    <span>By Hanna Wunderlich</span>
+                </li>
+                <li id="a3">
+                    <a href="#">IT  Car-Tuning</a>
+                    <span>by Pauline Gehrke</span>
+                </li>
 
-    <header>
-        <img src="images/forge_white.svg" class="logo" id="logo-icon">
-        <div class="moto">extraterrastrial experiments in technology</div>
-        <img src="images/menu.svg" class="menu-btn" id="open-menu">
-    </header>
+                <li id="a4">
+                    <a href="#">Robots & AI</a>
+                    <span>by Natahlie Hubl</span>
+                </li>
+                <li id="a5">
+                    <a href="#">Sarah's article</a>
+                    <span>by Sarah ???</span>
+                </li>
+            </ul>
+        </nav>
 
-    <!-- How to fix image is blocking button click? -->
-    <!-- <img src="images/Spaceship.svg" class="bg-img" id="spaceship"> -->
+        <header>
+            <img src="images/forge_white.svg" class="logo" id="logo-icon">
+            <div class="moto">extraterrastrial experiments in technology</div>
+            <div class="close-article">back</div>
+            <img src="images/menu.svg" class="menu-btn" id="open-menu">
+        </header>
 
-    <section>
-        <h1 id='title'>The<br>Forge</h1>
-    </section>
+        <!-- How to fix image is blocking button click? -->
+        <!-- <img src="images/Spaceship.svg" class="bg-img" id="spaceship"> -->
 
-    <!-- JS -->
-    <script>
-        var menuOverlay = document.getElementById('menu-overlay');
-        var articleOverlay = document.getElementById('article-overlay');
-        var title = document.getElementById('title');
-        var logo = document.getElementById('logo-icon');
-        var ship = document.getElementById('spaceship');
+        <section>
+            <h1 id='title'>The<br>Forge</h1>
+        </section>
 
-        // clicking the menu button.
-        document.getElementById('open-menu').addEventListener('click', function () {
-            menuOverlay.classList.add('show-menu');
-            title.classList.add('title-shrink');
-            logo.classList.add('logo-color');
-            ship.classList.add('ship-fade')
-        });
+        <!-- JS -->
+        <script>
+            const textHUBL = `Creation
 
-        // clicking the close menu button.
-        // How to close the menu with animation, 
-        // being able to open it a 2nd time?
-        document.getElementById('close-menu').addEventListener('click', function () {
-            // menuOverlay.classList.add('hide-menu');
-            menuOverlay.classList.remove('show-menu');
-            title.classList.remove('title-change');
-            logo.classList.remove('logo-color');
-            ship.classList.remove('ship-fade');
-        });
+Early on, most of the world did not recognize the definition and development of robots, computerization, and AI. Nevertheless, the topic was explored by individuals with various distinctive roots, cultures, and appeals.
 
-        var articles = [
-            {
-                id: 1,
-                title: "AI, HR & Discrimination",
-                author: "Yotam Perets",
-                text: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Expedita tenetur pariatur"
-            },
-            {
-                id: 2,
-                title: "AI, HR & Discrimination",
-                author: "Hanna Wunderlich",
-                text: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Expedita tenetur pariatur"
-            }, {
-                id: 3,
-                title: "How IT and Softwares Affect Car Tuning and the Tuning-Scene",
-                author: "Pauline Gherke",
-                text: `Today’s world is getting easier and faster.  And so do cars. Nowadays, life is all about fully enjoying what you do. New technologies and improvements in automotive applications, as well as the more and more innovative use of existing technologies are becoming a new thing in the Tuning world. New looks and new trends such as new modification methods are becoming increasingly popular throughout the world. However, beside the promises of constant improvement by different car manufacturers, the DIY-tuning (do it yourself) is still a vital part of the scene. How did tuning work before the time of the Internet, Softwares and technology? How far did the influence of IT and Softwares go and how important is the role of IT and Softwares in the Tuning-Industry? And how important will IT and Softwares be in the future? Let’s take a deeper look at the subject. 
-Overall, one could describe tuning as: ‚The process of modifying and enhancing a vehicle’s performance through engine, suspension and body modifications.’ after tuningonline.pt (2019). 
+Karel Capek, a Czech poet, coined the term robot in his 1920 play Rossum's Widespread Robots in the early 1900s. Capek's play, having invented the word, also revealed the primary potential for robots to take over the world. (Science fiction - robots started creating themselves)
 
-These modifications allow a vehicle to improve the vehicle to assure an increase in engine performance, outward appearance and horsepower. Very popular nowadays is the increase of handling capabilities and an increased fuel efficiency (when compared to power output). To accomplish all of the desired changes, it is important to be aware of different tuning methods. In addition, car tuning has always been a personal venture, as it allows the owner of a car or any vehicle to customize everything concerning their needs and wants. 
+In 1939, the first physical robot, ELEKTRO, emerged at the rational of the world — checking a key point in computerization history. After receiving human instructions, he was able to walk, smoke cigarettes, and blow up balloons.
 
-Car tuning in the past`
-            }, {
-                id: 4,
-                title: "AI, HR & Discrimination",
-                author: "Nathalie Hubl",
-                text: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Expedita tenetur pariatur"
-            }
-        ]
+Three laws of robotics 
 
-        articles.forEach((article) => {
-            document.getElementById(`a${article.id}`).addEventListener('click', function () {
-                articleOverlay.classList.add('show-article');
+In the early 1940s, Isaac Asimov subsequently made the three laws of mechanical technology that he used in his own fictional works.
 
-                const { title, author, text } = article;
+At that point, these rules were recognized by other journalists who also used them in their pieces of science fiction.
 
-                // creating HTML nodes with content
-                const titleHTML = document.createElement('H2')
-                titleHTML.innerHTML = title;
-                const authorHTML = document.createElement('P')
-                authorHTML.innerHTML = author;
-                document.getElementsByClassName('article')[0]
-                    .appendChild(titleHTML)
-                    .appendChild(authorHTML);
+The three rules direct the ways a robot must act with respect to humans: 
+	•	One: A robot may not injure a human being or, through inaction, allow a human being to come to harm.
+	•	Two: A robot must obey orders given it by human beings except where such orders would conflict with the First Law.
+	•	Three: A robot must protect its own existence as long as such protection does not conflict with the First or Second Law.
 
-                text.split('\n\n')
-                    .forEach((p) => {
-                        const pHTML = document.createElement('P');
-                        pHTML.innerHTML = p;
+The beginnings 
+
+With the idea of robots being created and accepted by most people, William Dark Walter developed the first autonomous robots in the mechanization history in 1948. Two 'tortoises' came in the form of these: Elmer and Elsie.
+
+
+Wikipedia - https://en.wikipedia.org/wiki/Elmer_and_Elsie_(robots)
+
+Without human assistance, the robots were able to find their way around obstacles by following light and using a bump sensor. Remarkably, the progress in integrating these two' sensory' signals (light and touch) also enabled us to better understand our own nervous system. 
+
+In 1950, Alan Turing invented a way of measuring a machine's 'thinking', which measured the capacity of the machine to 'think'. It is recognized as The Turing Test and still used today.
+
+
+Recognition 
+
+The research in the world of robotics began to gain recognition within the academic community with so much success, that in a conference at Dartmouth University in 1956 the term 'artificial intelligence' and AI as a research area were introduced.
+
+This motivated many to continue improving mechanical autonomy, and formally began to inquire about advancing counterfeit intelligence.
+
+The history of computerization isn't all victories. Negative reports around Common Dialect Handling (NLP) in 1966, which highlighted the failings of a 10-year period, caused a delay within the evolution of dialect processing in AI. 
+
+It wasn’t until the early 70s that a powerful group centered on Natural Language Processing was built up at the Artificial Intelligence Centre at the Stanford Research Institute.
+
+The 60s, 70s and 80s
+
+Outstanding robots within the 60s included the 1966 treatment chatbot ‘ELIZA’, which was created as a joke. Later in 1968 there was also a mobile robot named ‘Shakey’. 
+
+
+Wikipedia - https://en.wikipedia.org/wiki/Shakey_the_robot
+
+Despite this, there was something of a quiet time in the automation era. The seventies and eighties came to be called the AI winter. Belief in AI's growth declined and people became more cynical about their chances of success. This didn't mean this AI work was stopped, just that for a while it stayed out of the spotlight.
+
+Nevertheless, we've seen some innovations. In 1979, the assembly line assistance SCARA. In 1984, robot that learned from experience, RB5X. The word 'virtual reality' was then introduced with the first sales of VR gloves and glasses in 1985.
+
+Soon after, the term 'augmented reality' was coined by Tom Caudell (1990). Sir Tim Berners-Lee invented hyperlinks and hypertexts around the same time (1989) and used them to create the World Wide Web.
+
+Around this time Computerized automation began to evolve, and the 1990s would mark the beginning of AI development from physical bots to digital programs.  
+
+
+90s AI and automation software
+
+A time for significant advances in AI was the 1990s. Chess grandmaster Garry Kasparov was defeated at chess by an artificial intelligence 'Deep Blue'. NASA's first autonomous robotics program, Sojourner, was deployed on Mars surface.
+
+In the meantime, web crawlers (and other data extraction programs based on AI) have become a key component of widespread web use.
+
+This period also marks when the automation history became thoroughly interwoven with the management of business processes. BPM development and computerized automation led to large BPM systems being recognized in the 90s.
+
+
+The millennium
+
+In the early 2000s, the development of automation had a distinct void until technology advancement. Since Honda's production of ASIMO, which is said to be 'the most advanced humanoid robot in the world’ in 2000, the advancement of automation has been silent for a while.
+
+
+
+
+https://hondanews.eu/eu/lt/corporate/media/photos/31255/asimo-2000
+
+Negative business process management reviews, which in business process automation is indispensable, saw search rates fall by over half between 2004 and 2011 for the term. There was an unexpected decline in business interest in process management solutions.
+
+In 2011, Apple's Siri's arrival ended the time of radio silence about automation breakthroughs. Siri has sparked a new age of assistants powered by automation and AI. It represented the shift away from physical robots into computerized automation production and AI applications that began in the late 80s and early 90s.
+
+
+The present day
+
+Automation software has become a requirement instead of a privilege in the present day. BPA or Automation of business processes (recently known as automation of robotic processes or RPA) is becoming increasingly refined and efficient. Its widespread use optimizes the time and work of employees, resulting in huge resource savings.
+
+We witness AI's magic every day, whether it's on Facebook, emails, video games, or elsewhere. In our tablets, in our vehicles and in our houses, we have artificial intelligence assistants. All of this, too, in the technology kids.
+
+It's not perfect. Alexa often misunderstands us, Siri doesn't always get the answer. NPCs do stupid (and hilarious) things in video games, and as recently as 2016 we've seen Microsoft's Tay fiasco.
+
+Yet AI and automation are now more powerful than ever, considering these limitations. And by the day they develop and improve.
+
+
+The future of automation
+
+In a short period of time, the history of automation, with some bumps along the way, has seen a lot of success. Today it continues to grow and develop, providing us with more innovative solutions, immersive AI, and support to unravel the universe's secrets.
+
+It's impossible to know if a potential robot revolt will happen, like Karel Capek and all the science fiction writers after him said.  What is obvious is that it looks like the future will be automated. We shouldn't forget the history of automation or the work it took to get us where we are today, as exciting as current and future tech is.
+
+
+
+
+
+
+
+
+
+Main source for the text: https://www.thinkautomation.com/bots-and-ai/a-history-of-automation-the-rise-of-robots-and-ai/
+
+
+
+`
+            const textHanna = `
+Topic: The Development of AI and machines in the Art scene
+Computers, machines and soon completely independent artificially intelligent systems are slowly taking over work and tasks in different fields, that have been previously done by humans. There are many easy processes that involve for example simple movements and repetitions, which can be or already have been fully automated. But when it comes to abstract thinking and creative tasks humans are still far ahead…at this time. However, it seems like we’re now being challenged by our own creations because even when it comes to those tasks ,that back in time required human creativity, consciousness, thoughts and feelings, nonhuman entities are starting to take over as well and it’s about to change the whole face of art and entertainment. So maybe not far in the future, all conceptions of AI that Hollywood brought to us could become reality. This Movement of technology in fusion with the art scene can be seen out of different perspectives and has many open questions for us. First it is interesting for artists and everyone who is aiming to expand their own creative practices. Second many AI researchers are taking over projects in the creative sector for actually building new AI systems, doing research on our human creativity and the technological implementation and who want to contribute to the understanding and development of art and the whole art practice itself.  At last it is also worthwhile to everyone not included in these 2 groups because it transforms our way of experiencing art in any form.
+
+Current developments:   Within the past 50 years Artists and creators have been experimenting with computers and artificial intelligence. So, let us talk about what AI art is first. One of the first examples was AARON presented by Harold Cohen in 1974. It was computer program that painted plants and people by itself. Cohen improved the system over time so that it learned more and more about perspective, human anatomy and optical foundations of plants. 
+However, the new wave of AI art these days is different from this example. Back then artists generated the art by writing detailed code that specified the rules for the desired aesthetics. Today’s developments includes AI and machine learning technologies and give the computer much more autonomy and freedom in creating images. The contrast is, that algorithms are set up by artists to “learn” about aesthetics by looking at many images using a machine-learning technology. Artificial intelligence then generates new images in adherence to the aesthetics it has learned before, so that the results which AI can create can be surprising even for the artists themselves.
+In the last few years, hundreds of so called “AI artists” emerged all over the world. Complex algorithms in machines, that mostly are still created by humans themselves, start creating unique and overwhelming works of art. They’re generating stunning visuals, profound poetry, transcendent music, and even realistic movie scripts.  While not even trying to replace your favorite artists, the creators want to set inspiration, for example in songwriting by so called “Flow Machines”. The general development and proliferation of those AI Artists and AI Arts on the other hand is making many people feel uncomfortable because it could change our whole picture of arts. 
+In the year of 2018 the first-ever original artwork created by using artificial intelligence only came to auction at the famous Christie’s auction house in New York. It was the Portrait of Edmond de Belamy, also created in 2018 that was sold much over the estimate for $432,500. It is one of a group of portraits of the fictional Belamy family which were painted by an AI created in a Paris-based collective. The members explained, the creation of those portraits was based on the AI learning from a data set of over 10,000 portraits that where painted between the 14th and the 20th century. There also is a Discriminator involved determining if there are differences between the human painted and the AI painted artworks. So that at the end a picture is created that looks like it has human origin from the desired time and style. Although the auction was the first time that an auction house even paid attention to this genre of paintings, the artwork itself and especially the process which created it stirred up many controversies in both, the art and the AI world.
+
+The future of Arts and what influence it has on human creativity:
+
+AI Art of any kind is a very controversial topic and criticized by many. People think that work produced by AI artists can only be boring because when it comes to art, they are looking for humanity, creativity and originality. So, artworks created by machines can never be real art, right? And on the other hand, all the AI images that were so far created still had a significant amount of human input anyways.  Even though the potential of technology seems huge, those developments raise some difficult and essential questions for us humans about our future role in a world where everything is increasingly automated. If machines and Artificial intelligence even take our place in creative tasks, what does this mean for art in general and artists? It also is getting more difficult to even define now what an artist is. 
+Talking about Creativity is not easy because it seems mysterious and is difficult to explain. The fact that we aren’t conscious of how a creative idea works makes it also hard to implement that into a machine, but we still get better and better AI techniques that are anyways able to replicate it. On one site it can help humans increase their creativity and can make them think in new directions because same as with many other technological achievements, we just want to push ourselves beyond our biological limitations. So, letting machines influence the art scene could expand our human creativity and push the present boundaries of art to a new level. Many fear those recent developments but we should not see AI art as a threat to humans but more as a way of creating exciting artistic masterpieces were humans and machines have to work together. We should focus on the positive site of those creative new technologies and see them as an enrichment for our live and work. 
+Looking at it in another way, we should ask ourselves, even if an artificially intelligent computer could one day be as creative as some of the world’s most famous creators, is it creative or just apparently creative. Machines can never totally replace humans for more than one reason.  They have a lack of intentionality and consciousness. They can’t interact with their environment, take impressions from it and let them influence their art, which is a huge difference to us humans. Most computer programs only perform what is written down in their code and follow strict patterns. But they can’t give symbols and actions real meanings, so it is impossible for them to act intentionally. Maybe one day with certain kinds of sensors that enable machines to react and interact and let their environment influence their thinking this fiction could become reality.
+Another reason is the fact that AI generated art only gets the status that we actually give it in our society and most people are reluctant to even give it a place in our life. This could probably be because nonbiological artists and creators do not have a natural place in our society of humans. It even is hard when it comes to non-human artists for example “Nonja” the orangutan from the Vienna Zoo who created abstract paintings under an alias of a person to be appreciated as art. Accepting the fact that another species could also be creative and intelligent is way harder than just saying they appear to be. So, it is much more of a moral and less of a scientific issue.  
+To sum it all up computers would not be the first example of unconscious creating. The evolution is the first and best example that did not demand a visionary creator to build brilliant and fascinating new things. We should not be afraid or antipathetic against AI artist and their creations because they get the value that we give them and including all points they will never completely replace humans but only support and ameliorate our creativity and expressions. They will set new boundaries and define art new but its will also transform and upgrade our way of experiencing it. 
+
+`
+            const textSarah = `
+Amazon – how it all began 
+
+Jeffrey Preston Bezos, born January 12, 1964 in Albuquerque, New Mexico had the idea of starting a business in 1994. In June of the same year Bezos initially incorporated the company under a different name then the today known.
+Bezos' parents invested almost $250,000 in the start-up so that Amazon could be founded.
+Because of the worldwide demand for literature, Bezos decided that his business would be the sale of books. 
+
+Informing himself about the future of the Internet and that the annual web commerce was projected a growth of 2,3%, Bezos started with 20 products that he could market online. He abbreviated the list to what were the most promising products. Those products included: compact discs, computer hardware, computer software, videos, and books.
+At the turn of the century, Amazon began to expand its selling items to electronics, video games, toys, games, home-improvement items and many more.
+
+Today Bezos is known as the CEO, the founder, the president and Chief executive officer of Amazon.com which is the biggest internet-based company in the world.
+
+
+
+Amazon – Alexa 
+
+Amazon Echo Dot 
+
+Amazon Alexa is a pioneering technology when it comes to making voice control the user interface of the future. Alexa is the voice service behind Amazon’s Echo product family, Amazon Fire TV and many other third-party products. Echo can play music, retrieve messages, control lighting, regulate the thermostat and much more – all by voice control across the room. 
+
+Through the Alexa voice service amazon has simplified the conversational interfaces for device makers.
+This allows developers to add Alexa and intelligence voice control to new products for a handsfree voice experience.
+Alexa voice system develops through API – Application programming interface updates, new features and Alexa skills. It also offers comprehensive of development and resources. From technical documentation and development.
+
+The picture underneath shows and illustrates how Alexa works. When you speak to Alexa, a voice recording of the question you want will be sent to Amazon's cloud, where your request and other information will be processed for an answer. For example, if you say "Alexa, play the top hits from Amazon Music", use the recording of your command and the information from Amazon Music to play the top hits.
+
+
+Echo devices are set so that they only recognize the selected activation word (Alexa, Echo, Amazon or Computer). The device recognizes the activation word by identifying acoustic patterns that make up the activation word. When the activation word is recognized, the audio data is forwarded to the cloud, including a fraction of a second before the activation word is uttered. Without the device recognizing the activation word or the activation of Alexa with a button, voice recordings are not saved or send to the cloud. 
+
+Through all the data that amazon has of the consumer and user of their product their next phase is to develop the product which includes a commitment to developers to easily integrate the Alexa platform into their systems. 
+
+
+
+
+Artificial intelligence – and whether Alexa is a part of it
+
+Artificial intelligence is a sub-area of computer science that deals with the automation of intelligent behavior and machine learning. Nevertheless, it is used in research and development.
+
+
+Does Alexa use Artificial Intelligence? 
+
+"Amazon uses artificial intelligence everywhere," says Amazon's chief technology officer Werner Vogel’s. "But our first thought is not technology, but our customers."
+
+The research focuses primarily on customers. discoveries in speech recognition, natural language understanding, deep learning, and other disciplines of machine learning can lead to new ideas and applications that directly impact other people's lives. Amazon is also firmly convinced that the team must work closely with the academic community and be part of the scientific discourse.
+
+Amazon supports the publication of research results that can help shape a future in which interaction with computer systems becomes even more natural and intuitive.
+
+
+Through the voice service that amazon offers with Alexa, the product is already part of the artificial intelligence.
+However, one could also say that algorithms are responsible for the analyzes of the consumer’s needs.
+A very controversial topic - however, a precise definition for intelligence must first be established.
+Until then, Alexa by amazon counts as AI and still has time to expand. 
+
+
+Sarah Moghiseh 
+Sources 
+
+
+Internet Sources 
+
+https://www.amazon.de/b?ie=UTF8&node=14100226031
+
+https://developer.amazon.com/de-DE/docs/alexa/alexa-voice-service/faqs.html
+
+https://en.wikipedia.org/wiki/Amazon_Alexa#App
+
+https://developer.amazon.com/de-DE/docs/alexa/alexa-voice-service/get-started-with-alexa-voice-service.html
+
+https://www.amazon.de/b?ie=UTF8&node=12775495031
+
+https://www.youtube.com/watch?v=S_WB5fCvUQ8
+
+https://developer.amazon.com/de-DE/alexa/alexa-skills-kit
+`
+
+            const textPauline = `How IT and Softwares affect car tuning and the Tuning-Scene Today’s world is getting easier and faster.  And so do cars. Nowadays, life is all about fully enjoying what you do. New technologies and improvements in automotive applications, as well as the more and more innovative use of existing technologies are becoming a new thing in the Tuning world. New looks and new trends such as new modification methods are becoming increasingly popular throughout the world. However, beside the promises of constant improvement by different car manufacturers, the DIY-tuning (do it yourself) is still a vital part of the scene. How did tuning work before the time of the Internet, Softwares and technology? How far did the influence of IT and Softwares go and how important is the role of IT and Softwares in the Tuning-Industry? And how important will IT and Softwares be in the future? Let’s take a deeper look at the subject.  Overall, one could describe tuning as: ‚The process of modifying and enhancing a vehicle’s performance through engine, suspension and body modifications.’ after tuningonline.pt (2019). 
+ These modifications allow a vehicle to improve the vehicle to assure an increase in engine performance, outward appearance and horsepower. Very popular nowadays is the increase of handling capabilities and an increased fuel efficiency (when compared to power output). To accomplish all of the desired changes, it is important to be aware of different tuning methods. In addition, car tuning has always been a personal venture, as it allows the owner of a car or any vehicle to customize everything concerning their needs and wants. 
+
+Car tuning in the past
+http://www.tuningonline.pt/wp-content/uploads/2014/09/hotrods.jpg
+Car tuning has a very long history, as it is as old as the vehicle itself. However, the tuning of the early days would not be recognizable by tuners of today’s society, as we talk about very minimalistic changes. In fact, Prohibition was one of the main factors that led to the ‚invention’ of tuning and the modern sport of auto racing in the US. While Prohibition may have been of long last, Car tuning and racing itself did not disappear, but settled in society. (Cf. Source 4) The motivation of finding a way to constantly improve vehicles became a real pleasure to society. 
+(Cf. Source 3) Tuning started as a part of the racing industry. The first cars were certainly not designed to race, so people had to improve them to make them faster, so they could compete with others. However, tuning became more and more popular with time and quickly changed its focus, from building racing cars to enhance vehicles so they could be in daily driving, such as in illegal street races. The ‚old tuning‘ focused on ways to make vehicles more powerful, while still providing stability for driving on regular roads, rather than on racetracks. The earliest performance car ever made was the Ford 999. It was designed and built by Henry Ford in 1902. Ford created two identical cars where one was painted red and the other was painted yellow. (Cf. Source 3) This was the first car that came in two different colored options and inspired people to introduce colors to their vehicles. The ultimate rise of car tuning is called ‘The Muscle Car Era’.  In that time, the number of people investing their time and money in modifying vehicles increased as much as never before and after. If there was one major new motivation for car modifying in the 1960s: the Mini. (Cf. Source 4)Nitrous oxide was used to ramp up engine performance. The cars body modifications began to become more interesting. Cars got bigger, slimmer, higher, lower and everything in between. However, only with the introduction of foreign cars e.g. the VW Beetle, tuning began to step into the direction of today’s tuning world.  Mainly during the years of 1980 and 1990, tuning became what we consider it today. During that time, people first discovered the advantage of having larger wheels (starting only with 14 and 15-inch wheels). (Cf. Source 3) Today, 23, 24 and even bigger wheels are common. Another important change was the extreme change of the cars body wraps and body modifications. To name only some of them: Vinyl graphics to achieve a custom look, wing spoilers and body kits for a more aggressive outward appearance and engine performance enhancements, such as turbos and superchargers, were first used. During that time, also affected by the world wide popular films of ‚The Fast and the Furious‘, people started to improve performance not only to race, but to match their personal preferences and type. Therefore, outward appearance became equally, maybe even more important than power. (Cf. Source 4)
+
+Tuning in today’s world
+In today’s world, cars bought directly from the manufacturer are so advanced that it is to be questioned if tuning is still necessary. The answer is easy and straight forward: YES. Even today, where every car manufacturer gives the customer the chance to individually modify their vehicles, there still is a limit to what is possible or simply, what the manufacturer wants to make possible. Extravagant designs are often very high priced or only to be found on a very high class – high priced level. In addition, tuning often moves on the brink of legality. (Cf. Source 4) In today’s society, a balance between outward appearance and power such as domestic equipment is very important. (Cf. Source 3) It is not sufficient to either have a car that looks amazing but has no power or technological enhancement or vice versa. The new media are also used by hobbyists and less savvy car enthusiasts: Where dexterity, skill and many hours of work used to be acquired, today’s scene uses chips and updates from the Internet. The tuning world changed a lot with the introduction of the Internet, softwares and technology. The three main improvements that tent to be the most important ones as particularly shown off at most car tuning meet-ups and as being one of the most discussed topics in tuning: the Internet, optimazation of Softwares (internal) and Chip tuning (external).
+
+The Internet: With the introduction of the Internet, people got to communicate whenever and as often as they wanted. People got connected nationally and internationally and Tuners got to share their ideas and work together without being physically there. It got so much easier to share ideas in different forums, to ask questions that got answered by other people that might have had the same problems or even already came up with a solving idea. It became normal to google when you have a problem or to organize meetups with people with common interests. The results shown by typing in: ‚car tuning’ gives about 587.000.000 results in 0.6 seconds. (Cf. Source 5) This massive overload of information made tuning even easier and more enjoyable.  Even social media made it easier to show off new achievements and therefore, the entire community grew into a real network.  Nowadays, it is even possible to google and download certain upgrades that you then directly upload on / into your cars software, equipment etc. (Cf. Source 8) Another advantage is that the internet makes it possible to buy and in/- or export equipment for tuning at the lowest cost possible. It therefore turned into a hobby suitable for everyone as it doesn’t particularly require a high budget, IT skills, strength or a certain niche taste. (Cf. Source 6) 
+Softwares: Software in cars is becoming increasingly important. (Cf. Source 10) The number of software modules in cars and the steadily increasing demand are signs for its popularity amongst fans. In addition, more and more functions are being shifted from hardware to software. Connecting the components within the car as well as connecting the car and its surroundings is also gaining in importance. Software optimization is therefore an internal way of tuning as it optimizes by changing the already given features of the Vehicle without a need of constantly having the car being connected to the software (e.g. on a Laptop). (Cf. Source 8) As soon as the software got updated and optimized, the device with the software optimization on it can be removed. To do so, you replace the existing ‘instructions’ contained on the software loaded onto your vehicle’s ECU (Electronic Control Unit) (Cf. Source 10) that control your engine’s settings with new ones through loading new software onto the ECU. (Cf. Source 7)You then analyze your vehicle’s current software, then write a new version (or download it from the internet) with altered engine settings such as fuel/air mixture and ignition timing based on your exact vehicle type and your particular performance requirements. One has to be careful only to increase power to a level your engine and transmission can cope with, so future reliability won’t be affected. (Cf. Source 7) 
+Chip Tuning: Chip Tuning is an external way of tuning as it optimizes by changing the already given features of the vehicle by installing the chip into the car and leaving it there. (Cf. Source 1) As soon as the chip is removed, the initial situation is reached and the vehicle is back at its original performance as the inner softwares are not completely changed but just affected by the chip being installed. (Cf. Source 6)To do so, one has to install the chip by hand (make sure to get rid of it before the German TUV if you didn’t officially register it because then it’s not allowed). By using targeted interventions in the application of the engine electronics (with the chip) you boost the pressure of the engines supercharging and also increase the quantity of fuel that will be injected into the combustion chamber. As a result, engine power and torque are increased without the need of intervening mechanically on the unit or replacing components. (Cf. Source 9) There are therefore no structural changes made to the engine. (Cf. Source 5) The increase of power is based on the exhaustion of the thermodynamic and mechanical reserves, which (according to chip tuners like me) each series internal combustion engine has. Such an increase in performance can be observed especially in exhaust-turbocharged diesel engines: in addition to the increase in the achievable maximum speed and the tractive force of the vehicle, a significant improvement in the acceleration values, as well as a sensitization of the engines response during the acceleration process and the load change can be observed. (Cf. Source 9)
+
+
+Tuning in the future:
+One of the questions we have to ask ourselves in the future is the question of ecology and petrol consumption. What many people do not know is that one of the newest trends in the tuning scene is reaching the lowest possible petrol consumption. Not only with chip tuning but also with software optimization, tuners get to make vehicles not only quicker, but also safer and more environmentally friendly. (Cf. Source 2) For many Tuner it’s all about improvement. They think that the car industry does a very good job in improving an auto even further, whether it is the driving, the performance or the sound. Thinking about cars tuned for racing. When we arrive at a 95 g CO2 limit in 2020 (USA), the fun of tuning will be over at some point if we do not keep up with ecological changes. We (as tuner) are currently in a phase where we’re squeezing the highest efficiency out of the fuel. (Cf. Source 1) That is the biggest shift that the tuning scene has witnessed. (Cf. Source 2)We’re right in the middle of it and it means turbo technology, supercharging technology or e-compressors that just really try to boost efficiency as high as possible. That’s also what tuning is all about. One thing is for sure- The tunining scene will change radically within the next 10 years because it will become electric´. (Cf. Source 5) All car manufacturers are constantly working on a way of making cars go fully electric. Examples are the new BMWi8 and Tesla, who increase in importance and popularity while manufacturers that do not introduce electric cars do not do that well anymore. As technology and softwares become much more important than outward appearance in the future, (Cf. Source 2) the scene has to gather knowledge because many tuners who aren’t doing anything in that direction at all are going to experience a very cold awakening. That means that they’ll have to learn a great deal in a very short time. Another reason why tuning will change and even grow continuously is globalization. With all countries and continents being connected, there is barely any place on earth that can’t or isn’t contributing. (Cf. Source 2) Globalization shows us a unity in how Germany how Russians, how people in Dubai, in Japan, China or America want to have their cars changed. This internationalization makes an improvement in technology, also driven by competition unstoppable. The most popular cars in every tuning scene are nowadays those, who are on a high, advanced technological level. Screens and Led, Performance, bigger chips, the newest software optimization and options for every budget will continuously widen the target group when it comes to tuning. In today’s world it’s not only the 16 years old boy from next door that is tuning his car, it is people from all over the world with different skills that contribute. Women and even IT-professionals are currently revolutionary taking part in the tuning world and by now, such as in the future – tuning is bar far not only about performance anymore. (Cf. Source 5) It goes beyond all of the old values and makes vehicles even more modern and more advanced than they have ever been before – making tuning contribute strongly to solving ecological problems, building a community and introduction of IT to everyone (even to people that do not normally interact with technology in their everyday life. (Cf. Source 6)
+
+
+
+Sources:
+	•	areasofmyexpertise.com (2019): What are the benefits of chip tuning?, http://www.areasofmyexpertise.com/what-are-the-benefits-of-chip-tuning/, accessed November 19th, 2019
+	•	automobilesoft.net (2019): Car Tuning Software, https://automobilesoft.net/auto-tuning-software/, accessed November 19th, 2019
+	•	carsarereal.com (2019): High Performance Cars – A look back in Time, http://carsarereal.com/high-performance-cars-look-back-time/, accessed November 19th, 2019
+	•	ecutek.com.au (2019): EcuTek The History Of Performance Tuning, http://www.ecutek.com.au/ecu-tuning/the-history-of-tuning, accessed November 19th, 2019
+	•	www.fastcar.co.uk (2019): A Brief History of Car Modifying,  https://www.fastcar.co.uk/tuning-tech-guides/a-brief-history-of-car-modifying/, accessed November 19th, 2019
+	•	team-bhp.com (2019): ECU Remaps: About Tools, Software & Tuners!, https://www.team-bhp.com/forum/technical-stuff/190894-ecu-remaps-about-tools-software-tuners.html, accessed November 19th, 2019
+	•	telemotive.de (2019): Software development... specifically for automotive applications, https://www.telemotive.de/en/software-development/, accessed November 19th, 2019
+	•	tuningonline.pt (2019): CAR TUNING DEFINED, http://www.tuningonline.pt/car-tuning-defined/, accessed November 19th, 2019 
+	•	 skn-tuning.de (2019): Leistung durch Software, https://www.skn-tuning.de/leistungen/chip-tuning-power/chiptuning-power-software.html, accessed November 19th, 2019
+	•	sltremapping.com (2019): PERFORMANCE SOFTWARE,  https://www.sltremapping.com/services/performance-software, accessed November 19th, 2019
+`
+            var menuOverlay = document.getElementById('menu-overlay');
+            var articleOverlay = document.getElementById('article-overlay');
+            var title = document.getElementById('title');
+            var logo = document.getElementById('logo-icon');
+            var ship = document.getElementById('spaceship');
+            var backBtn = document.getElementsByClassName('close-article')[0];
+
+            // clicking the menu button.
+            document
+                .getElementById('open-menu')
+                .addEventListener('click', function () {
+                    menuOverlay
+                        .classList
+                        .add('show-menu');
+                    title
+                        .classList
+                        .add('title-shrink');
+                    logo
+                        .classList
+                        .add('logo-color');
+                    ship
+                        .classList
+                        .add('ship-fade')
+                });
+
+            // clicking the close menu button.
+            // How to close the menu with animation,
+            // being able to open it a 2nd time?
+            document
+                .getElementById('close-menu')
+                .addEventListener('click', function () {
+                    // menuOverlay.classList.add('hide-menu');
+                    menuOverlay
+                        .classList
+                        .remove('show-menu');
+                    title
+                        .classList
+                        .remove('title-change');
+                    logo
+                        .classList
+                        .remove('logo-color');
+                    ship
+                        .classList
+                        .remove('ship-fade');
+                });
+
+            // EDIT THIS FOR BACK BUTTON
+            backBtn.addEventListener('click', function () {
+                // menuOverlay.classList.add('hide-menu');
+                title
+                    .classList
+                    .remove('title-change');
+                logo
+                    .classList
+                    .remove('logo-color');
+                articleOverlay
+                    .classList
+                    .remove('show-article');
+                backBtn
+                    .classList
+                    .remove('show-back-btn');
+                document
+                    .getElementsByClassName('article')[0]
+                    .innerHTML = '';
+
+            });
+
+            var articles = [
+                {
+                    id: 1,
+                    title: "AI, HR & Discrimination",
+                    author: "Yotam Perets",
+                    text: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Expedita tenetur pariatur"
+                }, {
+                    id: 2,
+                    title: "AI, HR & Discrimination",
+                    author: "Hanna Wunderlich",
+                    text: textHanna
+                }, {
+                    id: 3,
+                    title: "How IT and Softwares Affect Car Tuning and the Tuning-Scene",
+                    author: "Pauline Gherke",
+                    text: textPauline
+                }, {
+                    id: 4,
+                    title: "AI, HR & Discrimination",
+                    author: "Nathalie Hubl",
+                    text: textHUBL
+                }, {
+                    id: 5,
+                    title: "AI, HR & Discrimination",
+                    author: "Sarah",
+                    text: textSarah
+                }
+            ]
+
+            articles.forEach((article) => {
+                document
+                    .getElementById(`a${article.id}`)
+                    .addEventListener('click', function () {
+                        articleOverlay
+                            .classList
+                            .add('show-article');
+                        backBtn
+                            .classList
+                            .add('show-back-btn');
+                        const {title, author, text} = article;
+
+                        // creating HTML nodes with content
+                        const titleHTML = document.createElement('H2')
+                        titleHTML.innerHTML = title;
+                        titleHTML.setAttribute('class', 'article-title')
+                        const authorHTML = document.createElement('P')
+                        authorHTML.innerHTML = author;
+                        authorHTML.setAttribute('class', 'author')
                         document
                             .getElementsByClassName('article')[0]
-                            .appendChild(pHTML);
-                    });
+                            .appendChild(titleHTML)
+                            .appendChild(authorHTML);
 
+                        text
+                            .split('\n\n')
+                            .forEach((p) => {
+                                const pHTML = document.createElement('P');
+                                pHTML.setAttribute('class', 'article-text');
+                                if (p.length <= 30) 
+                                    pHTML.setAttribute('class', 'article-p-title article-text');
+                                pHTML.innerHTML = p;
+                                document
+                                    .getElementsByClassName('article')[0]
+                                    .appendChild(pHTML);
+                            });
 
-                // document.getElementsByClassName('article-title')[0].textContent = title;
-                // document.getElementsByClassName('author')[0].textContent = author;
-                // document.getElementsByClassName('article-text')[0].textContent = text;
+                        // document.getElementsByClassName('article-title')[0].textContent = title;
+                        // document.getElementsByClassName('author')[0].textContent = author;
+                        // document.getElementsByClassName('article-text')[0].textContent = text;
+                    })
             })
-        })
-
-
-    </script>
-</body>
+        </script>
+    </body>
 
 </html>
