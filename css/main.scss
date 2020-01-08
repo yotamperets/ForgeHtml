@@ -151,10 +151,10 @@ nav {
 
     ul { 
         list-style-type: none;
-        margin: 10% auto 0 auto;
-        grid-template-columns: 22vh 22vh ;
-        grid-template-rows: 22vh 22vh;
-        grid-gap: 15px;
+        margin: 6vh auto 0 auto ;
+        // grid-template-columns: 22vh 22vh ;
+        // grid-template-rows: 22vh 22vh;
+        // grid-gap: 15px;
         justify-self: center;
         padding-inline-start: 0px;
         a {
@@ -208,6 +208,10 @@ nav {
 
     li:nth-of-type(4){
         animation: menu-item-anim .6s forwards 1.6s ease-in-out;
+    }
+
+    li:nth-of-type(5){
+        animation: menu-item-anim .6s forwards 1.8s ease-in-out;
     }
 }
 

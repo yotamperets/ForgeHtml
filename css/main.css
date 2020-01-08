@@ -144,12 +144,7 @@ nav .close-btn {
 
 nav ul {
   list-style-type: none;
-  margin: 10% auto 0 auto;
-  -ms-grid-columns: 22vh 22vh;
-      grid-template-columns: 22vh 22vh;
-  -ms-grid-rows: 22vh 22vh;
-      grid-template-rows: 22vh 22vh;
-  grid-gap: 15px;
+  margin: 6vh auto 0 auto;
   -ms-grid-column-align: center;
       justify-self: center;
   -webkit-padding-start: 0px;
@@ -206,6 +201,11 @@ nav ul li {
 .show-menu li:nth-of-type(4) {
   -webkit-animation: menu-item-anim .6s forwards 1.6s ease-in-out;
           animation: menu-item-anim .6s forwards 1.6s ease-in-out;
+}
+
+.show-menu li:nth-of-type(5) {
+  -webkit-animation: menu-item-anim .6s forwards 1.8s ease-in-out;
+          animation: menu-item-anim .6s forwards 1.8s ease-in-out;
 }
 
 .hide-menu {

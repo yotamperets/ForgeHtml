@@ -15,11 +15,11 @@
     <element class="article" id="article-overlay">
         <!-- <object type="text/html" data="/Articles/article1.txt" border="0" > -->
         <!-- </object> -->
-        <h2 class="article-title">AI, Recruitment & Discrimination</h2>
+        <!-- <h2 class="article-title">AI, Recruitment & Discrimination</h2>
         <p class="author">by Yotam Perets / Dec 12th, 2019</p>
         <p class="article-text"> Lorem ipsum, dolor sit amet consectetur adipisicing elit. Expedita tenetur pariatur
             nihil magnam rem culpa magni aliquam minima, a impedit odit odio quidem fugit doloremque eveniet. Rerum
-            accusantium iste tempora?</p>
+            accusantium iste tempora?</p> -->
     </element>
 
     <nav id="menu-overlay">
@@ -39,7 +39,11 @@
             </li>
             <li id="a4">
                 <a href="#">Robots & AI</a>
-                <span>by Natahlie</span>
+                <span>by Natahlie Hubl</span>
+            </li>
+            <li id="a5">
+                <a href="#">Sarah's article</a>
+                <span>by Sarah ???</span>
             </li>
         </ul>
     </nav>
@@ -98,9 +102,14 @@
                 text: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Expedita tenetur pariatur"
             }, {
                 id: 3,
-                title: "AI, HR & Discrimination",
+                title: "How IT and Softwares Affect Car Tuning and the Tuning-Scene",
                 author: "Pauline Gherke",
-                text: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Expedita tenetur pariatur"
+                text: `Today’s world is getting easier and faster.  And so do cars. Nowadays, life is all about fully enjoying what you do. New technologies and improvements in automotive applications, as well as the more and more innovative use of existing technologies are becoming a new thing in the Tuning world. New looks and new trends such as new modification methods are becoming increasingly popular throughout the world. However, beside the promises of constant improvement by different car manufacturers, the DIY-tuning (do it yourself) is still a vital part of the scene. How did tuning work before the time of the Internet, Softwares and technology? How far did the influence of IT and Softwares go and how important is the role of IT and Softwares in the Tuning-Industry? And how important will IT and Softwares be in the future? Let’s take a deeper look at the subject. 
+Overall, one could describe tuning as: ‚The process of modifying and enhancing a vehicle’s performance through engine, suspension and body modifications.’ after tuningonline.pt (2019). 
+
+These modifications allow a vehicle to improve the vehicle to assure an increase in engine performance, outward appearance and horsepower. Very popular nowadays is the increase of handling capabilities and an increased fuel efficiency (when compared to power output). To accomplish all of the desired changes, it is important to be aware of different tuning methods. In addition, car tuning has always been a personal venture, as it allows the owner of a car or any vehicle to customize everything concerning their needs and wants. 
+
+Car tuning in the past`
             }, {
                 id: 4,
                 title: "AI, HR & Discrimination",
@@ -112,10 +121,31 @@
         articles.forEach((article) => {
             document.getElementById(`a${article.id}`).addEventListener('click', function () {
                 articleOverlay.classList.add('show-article');
+
                 const { title, author, text } = article;
-                document.getElementsByClassName('article-title')[0].textContent = title;
-                document.getElementsByClassName('author')[0].textContent = author;
-                document.getElementsByClassName('article-text')[0].textContent = text;
+
+                // creating HTML nodes with content
+                const titleHTML = document.createElement('H2')
+                titleHTML.innerHTML = title;
+                const authorHTML = document.createElement('P')
+                authorHTML.innerHTML = author;
+                document.getElementsByClassName('article')[0]
+                    .appendChild(titleHTML)
+                    .appendChild(authorHTML);
+
+                text.split('\n\n')
+                    .forEach((p) => {
+                        const pHTML = document.createElement('P');
+                        pHTML.innerHTML = p;
+                        document
+                            .getElementsByClassName('article')[0]
+                            .appendChild(pHTML);
+                    });
+
+
+                // document.getElementsByClassName('article-title')[0].textContent = title;
+                // document.getElementsByClassName('author')[0].textContent = author;
+                // document.getElementsByClassName('article-text')[0].textContent = text;
             })
         })
 
